@@ -1,4 +1,4 @@
-package com.cbin.compseui
+package com.cbin.compseui.layout
 
 import android.content.Context
 import android.content.Intent

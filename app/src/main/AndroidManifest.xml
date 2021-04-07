@@ -21,7 +21,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RowActivity" />
+        <activity android:name=".layout.RowActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".layout.LayoutActivity" />
+        <activity android:name=".ThemeActivity" />
 
     </application>
 

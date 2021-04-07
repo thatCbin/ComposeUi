@@ -6,23 +6,19 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.cbin.compseui.layout.LayoutActivity
+import com.cbin.compseui.layout.RowActivity
 import com.cbin.compseui.ui.theme.CompseUiTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -33,13 +29,26 @@ class MainActivity : ComponentActivity() {
     }
 
 
-    private fun btnClick() {
-        RowActivity.start(this)
+    private fun btnClick(id: Int) {
+        when (id) {
+            0 -> {
+                HomeActivity.start(this)
+            }
+            1 -> {
+                RowActivity.start(this)
+            }
+            2 -> {
+                LayoutActivity.start(this)
+            }
+
+            3 -> {
+
+            }
+            else -> Toast.makeText(this, "没找到对应按钮功能", Toast.LENGTH_LONG).show()
+        }
+
     }
 
-    private fun btn2Click() {
-        Toast.makeText(applicationContext, "B", Toast.LENGTH_LONG).show()
-    }
 
     /**
      * ui
@@ -48,64 +57,58 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun NewsStory() {
         Column(
-            //verticalArrangement: Arrangement. Vertical = Arrangement . Top,
-            //horizontalAlignment: Alignment.Horizontal = Alignment.Start,
         ) {
-
             Column(modifier = Modifier.padding(16.dp)) {
-                Text(
-                    text = "A day wandering through the sandhills in Shark Fin Cove, and a few of the sights I saw",
-                    style = typography.h6,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
-                Text(
-                    text =
-                    "Davenport, California",
-                    style = typography.body2
-                )
-                Text(
-                    text = "December 2018",
-                    style = typography.body2
-                )
-                Spacer(Modifier.height(16.dp))
-            }
-
-            Column(modifier = Modifier.padding(16.dp)) {
-
                 Button(
-                    onClick = { btnClick() }
+                    onClick = { btnClick(0) },
+                    modifier = Modifier
+                        .height(40.dp)
                 ) {
                     Text(
-                        text = "AAAAAAAA",
-                        style = typography.body2,
+                        text = "Kotlin 对 Jetpack Compose 的支持\n",
+//                        style = typography.body2,
                     )
                 }
 
-                Spacer(Modifier.height(16.dp))
+                Spacer(Modifier.height(10.dp))
 
                 Button(
-                    onClick = {
-                        btn2Click()
-                    },
+                    onClick = { btnClick(1) },
+                    modifier = Modifier
+                        .width(100.dp)
+                        .height(40.dp)
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.header),
-                        contentDescription = "",
-                        modifier = Modifier
-                            .height(180.dp)
-                            .fillMaxWidth()
-                            .clip(shape = RoundedCornerShape(10.dp)),
-                        contentScale = ContentScale.Crop
+                    Text(
+                        text = "布局1",
+//                        style = typography.body2,
                     )
                 }
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    content = {
-                        Text("Some text")
-                        Text("Some more text")
-                    }
-                )
+                Spacer(Modifier.height(10.dp))
+
+                Button(
+                    onClick = { btnClick(2) },
+                    modifier = Modifier
+                        .width(100.dp)
+                        .height(40.dp)
+                ) {
+                    Text(
+                        text = "布局2",
+//                        style = typography.body2,
+                    )
+                }
+
+                Button(
+                    onClick = { btnClick(3) },
+                    modifier = Modifier
+                        .width(100.dp)
+                        .height(40.dp)
+                ) {
+                    Text(
+                        text = "主题",
+//                        style = typography.body2,
+                    )
+                }
+
             }
         }
 

@@ -205,12 +205,15 @@ class LayoutActivity : ComponentActivity() {
     @Preview(showBackground = true, showSystemUi = true)
     @Composable
     fun ui3() {
-        //MatchParentSizeComposable()
-        //如果使用 fillMaxSize 代替 matchParentSize，Spacer 将占用父项允许的所有可用空间，反过来使父项展开并填满所有可用空间
-        //MatchParentSizeComposable2()
-        //TextWithPaddingFromBaseline()
+        Column() {
 
-        OffsetComposable()
+            MatchParentSizeComposable()
+            MatchParentSizeComposable2()
+            TextWithPaddingFromBaseline()
+            OffsetComposable()
+            FlexibleComposable()
+        }
+
     }
 
     /**
@@ -282,14 +285,40 @@ class LayoutActivity : ComponentActivity() {
                     .size(width = 200.dp, height = 200.dp),
             ) {
                 Text(
-                    "布局偏移修改器示例布局偏移修改器布局偏移修改器示例示例布局偏移修改器示例",
-                    Modifier.offset(x = 10.dp, y = 100.dp)
-                        .paddingFromBaseline(top = 20.dp, bottom = 20.dp)
+                    "padding在 offset前面 不会影响 offset 反之则会",
+                    Modifier
+                        .padding(start = 10.dp, top = 10.dp, end = 10.dp, bottom = 10.dp)
+
+                        .offset(x = 10.dp, y = 10.dp)
+
                 )
             }
         }
 
     }
+
+
+    /**
+     * Row 和 Column 中的 weight 修饰符
+     */
+    @Composable
+    fun FlexibleComposable() {
+        Row(Modifier.width(210.dp)) {
+            Box(
+                Modifier
+                    .weight(3f)
+                    .height(50.dp)
+                    .background(Color.Blue)
+            )
+            Box(
+                Modifier
+                    .weight(2f)
+                    .height(50.dp)
+                    .background(Color.Red)
+            )
+        }
+    }
+
 
     companion object {
         fun start(context: Context) {

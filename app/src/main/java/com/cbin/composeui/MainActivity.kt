@@ -1,4 +1,4 @@
-package com.cbin.compseui
+package com.cbin.composeui
 
 import android.content.Context
 import android.content.Intent
@@ -13,9 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.cbin.compseui.layout.LayoutActivity
-import com.cbin.compseui.layout.RowActivity
-import com.cbin.compseui.ui.theme.CompseUiTheme
+import com.cbin.composeui.layout.LayoutActivity
+import com.cbin.composeui.layout.RowActivity
+import com.cbin.composeui.ui.theme.CompseUiTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -59,59 +59,83 @@ class MainActivity : ComponentActivity() {
         Column(
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
-                Button(
-                    onClick = { btnClick(0) },
-                    modifier = Modifier
-                        .height(40.dp)
-                ) {
-                    Text(
-                        text = "Kotlin 对 Jetpack Compose 的支持\n",
-//                        style = typography.body2,
-                    )
+
+                helloWord()
+
+                Spacer(Modifier.height(10.dp))
+
+                Row() {
+                    layoutA()
+                    Spacer(Modifier.width(10.dp))
+                    layoutB()
                 }
 
                 Spacer(Modifier.height(10.dp))
 
-                Button(
-                    onClick = { btnClick(1) },
-                    modifier = Modifier
-                        .width(100.dp)
-                        .height(40.dp)
-                ) {
-                    Text(
-                        text = "布局1",
-//                        style = typography.body2,
-                    )
-                }
-                Spacer(Modifier.height(10.dp))
-
-                Button(
-                    onClick = { btnClick(2) },
-                    modifier = Modifier
-                        .width(100.dp)
-                        .height(40.dp)
-                ) {
-                    Text(
-                        text = "布局2",
-//                        style = typography.body2,
-                    )
-                }
-
-                Button(
-                    onClick = { btnClick(3) },
-                    modifier = Modifier
-                        .width(100.dp)
-                        .height(40.dp)
-                ) {
-                    Text(
-                        text = "主题",
-//                        style = typography.body2,
-                    )
-                }
+                themeUi()
 
             }
         }
 
+    }
+
+    @Composable
+    fun helloWord() {
+        Button(
+            onClick = { btnClick(0) },
+            modifier = Modifier
+                .height(40.dp)
+        ) {
+            Text(
+                text = "Kotlin 对 Jetpack Compose 的支持",
+//                        style = typography.body2,
+            )
+        }
+    }
+
+    @Composable
+    fun layoutA() {
+        Button(
+            onClick = { btnClick(1) },
+            modifier = Modifier
+                .width(100.dp)
+                .height(40.dp)
+        ) {
+            Text(
+                text = "布局1",
+//                        style = typography.body2,
+            )
+        }
+    }
+
+    @Composable
+    fun layoutB() {
+        Button(
+            onClick = { btnClick(2) },
+            modifier = Modifier
+                .width(100.dp)
+                .height(40.dp)
+        ) {
+            Text(
+                text = "布局2",
+//                        style = typography.body2,
+            )
+        }
+    }
+
+    @Composable
+    fun themeUi() {
+        Button(
+            onClick = { btnClick(3) },
+            modifier = Modifier
+                .width(100.dp)
+                .height(40.dp)
+        ) {
+            Text(
+                text = "主题",
+//                        style = typography.body2,
+            )
+        }
     }
 
     companion object {

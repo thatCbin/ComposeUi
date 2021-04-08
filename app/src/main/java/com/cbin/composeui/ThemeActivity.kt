@@ -1,11 +1,11 @@
-package com.cbin.compseui
+package com.cbin.composeui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.cbin.compseui.ui.theme.CompseUiTheme
+import com.cbin.composeui.ui.theme.CompseUiTheme
 
 /**
  * @author Cbin

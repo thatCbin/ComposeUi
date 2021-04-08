@@ -1,4 +1,4 @@
-package com.cbin.compseui.ui.theme
+package com.cbin.composeui.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

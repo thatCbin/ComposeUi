@@ -1,4 +1,4 @@
-package com.cbin.compseui
+package com.cbin.composeui
 
 import android.content.Context
 import android.content.Intent
@@ -13,9 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.cbin.compseui.layout.LayoutActivity
-import com.cbin.compseui.layout.RowActivity
-import com.cbin.compseui.ui.theme.CompseUiTheme
+import com.cbin.composeui.layout.LayoutActivity
+import com.cbin.composeui.layout.RowActivity
+import com.cbin.composeui.ui.theme.CompseUiTheme
 
 class MainActivity : ComponentActivity() {
 

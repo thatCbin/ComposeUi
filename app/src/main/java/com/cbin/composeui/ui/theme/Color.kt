@@ -1,4 +1,4 @@
-package com.cbin.compseui.ui.theme
+package com.cbin.composeui.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

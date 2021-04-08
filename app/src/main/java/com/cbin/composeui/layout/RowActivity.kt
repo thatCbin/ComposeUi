@@ -1,4 +1,4 @@
-package com.cbin.compseui.layout
+package com.cbin.composeui.layout
 
 import android.content.Context
 import android.content.Intent
@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.tooling.preview.Preview
-import com.cbin.compseui.ui.theme.CompseUiTheme
+import com.cbin.composeui.ui.theme.CompseUiTheme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.IntOffset

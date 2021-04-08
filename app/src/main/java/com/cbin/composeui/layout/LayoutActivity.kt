@@ -1,4 +1,4 @@
-package com.cbin.compseui.layout
+package com.cbin.composeui.layout
 
 import android.content.Context
 import android.content.Intent
@@ -10,7 +10,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -20,8 +19,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.cbin.compseui.R
-import com.cbin.compseui.ui.theme.CompseUiTheme
+import com.cbin.composeui.R
+import com.cbin.composeui.ui.theme.CompseUiTheme
 
 /**
  * @author Cbin

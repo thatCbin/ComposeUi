@@ -17,6 +17,12 @@ import com.cbin.composeui.layout.LayoutActivity
 import com.cbin.composeui.layout.RowActivity
 import com.cbin.composeui.ui.theme.CompseUiTheme
 
+/**
+ * @author Cbin
+ * @CreateDate 2021/4/6
+ * @describe
+ */
+
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

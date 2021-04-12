@@ -8,14 +8,25 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.cbin.composeui.layout.ConstraintLayoutActivity
 import com.cbin.composeui.layout.LayoutActivity
 import com.cbin.composeui.layout.RowActivity
 import com.cbin.composeui.ui.theme.CompseUiTheme
+
+/**
+ * @author Cbin
+ * @CreateDate 2021/4/6
+ * @describe
+ */
 
 class MainActivity : ComponentActivity() {
 
@@ -40,9 +51,8 @@ class MainActivity : ComponentActivity() {
             2 -> {
                 LayoutActivity.start(this)
             }
-
             3 -> {
-
+                ConstraintLayoutActivity.start(this)
             }
             else -> Toast.makeText(this, "没找到对应按钮功能", Toast.LENGTH_LONG).show()
         }
@@ -60,19 +70,21 @@ class MainActivity : ComponentActivity() {
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
 
-                helloWord()
+                HelloWord()
 
                 Spacer(Modifier.height(10.dp))
 
                 Row() {
-                    layoutA()
+                    LayoutA()
                     Spacer(Modifier.width(10.dp))
-                    layoutB()
+                    LayoutB()
+                    Spacer(Modifier.width(10.dp))
+                    LayoutC()
                 }
 
                 Spacer(Modifier.height(10.dp))
 
-                themeUi()
+                ThemeUi()
 
             }
         }
@@ -80,7 +92,7 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun helloWord() {
+    fun HelloWord() {
         Button(
             onClick = { btnClick(0) },
             modifier = Modifier
@@ -94,11 +106,10 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun layoutA() {
+    fun LayoutA() {
         Button(
             onClick = { btnClick(1) },
             modifier = Modifier
-                .width(100.dp)
                 .height(40.dp)
         ) {
             Text(
@@ -109,11 +120,10 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun layoutB() {
+    fun LayoutB() {
         Button(
             onClick = { btnClick(2) },
             modifier = Modifier
-                .width(100.dp)
                 .height(40.dp)
         ) {
             Text(
@@ -124,7 +134,25 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun themeUi() {
+    fun LayoutC() {
+        Button(
+            onClick = { btnClick(3) },
+            modifier = Modifier
+                .height(40.dp)
+        ) {
+            Text(
+                text = "Constraintlayout",
+                style = TextStyle(
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 13.sp,
+                    letterSpacing = 0.25.sp
+                ),
+            )
+        }
+    }
+
+    @Composable
+    fun ThemeUi() {
         Button(
             onClick = { btnClick(3) },
             modifier = Modifier

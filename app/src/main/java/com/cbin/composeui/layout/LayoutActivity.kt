@@ -33,9 +33,15 @@ class LayoutActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CompseUiTheme {
-                ui3()
+                Ui3()
             }
         }
+    }
+
+    fun a() {
+        val a = 5
+        var b = 4
+        print(a + b)
     }
 
     fun C1(): Unit {
@@ -59,7 +65,7 @@ class LayoutActivity : ComponentActivity() {
      */
     @Preview(showBackground = true, showSystemUi = true)
     @Composable
-    fun ui1() {
+    fun Ui1() {
         Column() {
             //ArtistCard1(onClick = { C1() })
             //ArtistCard2(onClick = { C2() })
@@ -104,7 +110,7 @@ class LayoutActivity : ComponentActivity() {
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
-            imageView()
+            ImageView()
         }
     }
 
@@ -117,7 +123,7 @@ class LayoutActivity : ComponentActivity() {
                 .padding(padding)
                 .fillMaxWidth()
         ) {
-            imageView()
+            ImageView()
         }
     }
 
@@ -130,12 +136,12 @@ class LayoutActivity : ComponentActivity() {
                 .clickable(onClick = onClick)
                 .fillMaxWidth()
         ) {
-            imageView()
+            ImageView()
         }
     }
 
     @Composable
-    fun imageView() {
+    fun ImageView() {
         Row(verticalAlignment = Alignment.CenterVertically) { /*...*/ }
         Spacer(Modifier.size(20.dp))
         Card(elevation = 4.dp) {
@@ -148,7 +154,7 @@ class LayoutActivity : ComponentActivity() {
 
     @Preview(showSystemUi = true, showBackground = true)
     @Composable
-    fun ui2() {
+    fun Ui2() {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -203,7 +209,7 @@ class LayoutActivity : ComponentActivity() {
 
     @Preview(showBackground = true, showSystemUi = true)
     @Composable
-    fun ui3() {
+    fun Ui3() {
         Column() {
 
             MatchParentSizeComposable()

@@ -26,6 +26,8 @@
         <activity android:name="com.cbin.composeui.layout.LayoutActivity" />
         <activity android:name="com.cbin.composeui.ThemeActivity" />
 
+        <activity android:name=".layout.ConstraintLayoutActivity" />
+
     </application>
 
 </manifest>

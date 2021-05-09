@@ -24,7 +24,7 @@
         <activity android:name="com.cbin.composeui.layout.RowActivity" />
         <activity android:name="com.cbin.composeui.HomeActivity" />
         <activity android:name="com.cbin.composeui.layout.LayoutActivity" />
-        <activity android:name="com.cbin.composeui.ThemeActivity" />
+        <activity android:name="com.cbin.composeui.theme.ThemeActivity" />
 
         <activity android:name=".layout.ConstraintLayoutActivity" />
 

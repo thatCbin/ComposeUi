@@ -8,7 +8,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,6 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.cbin.composeui.layout.ConstraintLayoutActivity
 import com.cbin.composeui.layout.LayoutActivity
 import com.cbin.composeui.layout.RowActivity
+import com.cbin.composeui.theme.ThemeActivity
 import com.cbin.composeui.ui.theme.CompseUiTheme
 
 /**
@@ -53,6 +53,9 @@ class MainActivity : ComponentActivity() {
             }
             3 -> {
                 ConstraintLayoutActivity.start(this)
+            }
+            4 -> {
+                ThemeActivity.start(this)
             }
             else -> Toast.makeText(this, "没找到对应按钮功能", Toast.LENGTH_LONG).show()
         }
@@ -154,7 +157,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun ThemeUi() {
         Button(
-            onClick = { btnClick(3) },
+            onClick = { btnClick(4) },
             modifier = Modifier
                 .width(100.dp)
                 .height(40.dp)

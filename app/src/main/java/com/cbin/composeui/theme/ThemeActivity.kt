@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
@@ -34,6 +36,20 @@ class ThemeActivity : ComponentActivity() {
         }
     }
 
+    var darkTheme = true
+
+    @Preview
+    @Composable
+    fun Ui() {
+        MaterialTheme(
+            colors = if (darkTheme) DarkColors else LightColors
+        ) {
+            Text(
+                text = "Hello theming",
+                color = MaterialTheme.colors.primary
+            )
+        }
+    }
 
     private val DarkColors = darkColors(
         primary = Purple200,
@@ -43,11 +59,4 @@ class ThemeActivity : ComponentActivity() {
         primary = Purple500,
         secondary = Teal500,
     )
-
-    @Preview
-    @Composable
-    fun Ui() {
-
-    }
-
 }
